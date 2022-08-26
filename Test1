@@ -1,0 +1,68 @@
+HashMap<String,Double> karniyarikMap = new HashMap<String,Double>();
+		HashMap<String,Double> patlicanKebabiMap = new HashMap<String,Double>();
+		HashMap<String,Double> aliNazikMap = new HashMap<String,Double>();
+		List<String> items = {"Eggplant", "Green Pepper", "Minced Meat", "Tomato", "Salt", "Olive Oil", "Tomato Souce", "Garlic", "Black Pepper", "Red Pepper",  "Parsley", "Onion", "Green Pepper","Yogurt"}
+		FoodManager foodManager = new FoodManager();
+		Unit unit = new Unit();
+		UnitManager unitManager = new UnitManager();
+		Calories calories = new Calories();
+		karniyarikMap.put(items[0], unitManager.convertUnitToGram(new Gram(),1200.0));
+		karniyarikMap.put(items[1], unitManager.convertUnitToGram(new Gram(),125.0));
+		karniyarikMap.put(items[2], unitManager.convertUnitToGram(new Gram(),350.0));
+		karniyarikMap.put(items[3], unitManager.convertUnitToGram(new Gram(),210.0));
+		karniyarikMap.put(items[4], unitManager.convertUnitToGram(new TeaSpoon(),3.0));
+		karniyarikMap.put(items[5], unitManager.convertUnitToGram(new TableSpoon(),3.0));
+		karniyarikMap.put(item[1], unitManager.convertUnitToGram(new Gram(),200.0));
+		karniyarikMap.put(items[6], unitManager.convertUnitToGram(new TableSpoon(),1.0));
+		karniyarikMap.put(items[7], unitManager.convertUnitToGram(new Gram(),8.0));
+		karniyarikMap.put(items[8], unitManager.convertUnitToGram(new TeaSpoon(),1.0));
+		karniyarikMap.put(items[4], unitManager.convertUnitToGram(new TeaSpoon(),1.0));
+		karniyarikMap.put(items[9], unitManager.convertUnitToGram(new TeaSpoon(),1.0));
+		karniyarikMap.put(items[10], unitManager.convertUnitToGram(new Gram(),75.0));
+		karniyarikMap.put(items[11], unitManager.convertUnitToGram(new Gram(),75.0));
+	 
+
+		patlicanKebabiMap.put(items[0], unitManager.convertUnitToGram(new Gram(),600.0));
+		patlicanKebabiMap.put(items[1], unitManager.convertUnitToGram(new Gram(),125.0));
+		patlicanKebabiMap.put(items[2], unitManager.convertUnitToGram(new Gram(),500.0));
+		patlicanKebabiMap.put(items[3], unitManager.convertUnitToGram(new Gram(),200.0));
+		patlicanKebabiMap.put(items[4], unitManager.convertUnitToGram(new TeaSpoon(),1.0));
+		patlicanKebabiMap.put(items[7], unitManager.convertUnitToGram(new Gram(),8.0));
+		patlicanKebabiMap.put(items[8], unitManager.convertUnitToGram(new TeaSpoon(),1.0));
+		patlicanKebabiMap.put(items[9], unitManager.convertUnitToGram(new TeaSpoon(),1.0));
+		patlicanKebabiMap.put(items[6], unitManager.convertUnitToGram(new TableSpoon(),1.0));
+		
+		aliNazikMap.put(items[0], unitManager.convertUnitToGram(new Gram(),600.0));
+		aliNazikMap.put(items[5],unitManager.convertUnitToGram(new TableSpoon(),6.0));
+		aliNazikMap.put(items[12], unitManager.convertUnitToGram(new Gram(),50.0));
+		aliNazikMap.put(items[2], unitManager.convertUnitToGram(new Gram(),900.0));
+		aliNazikMap.put(items[6], unitManager.convertUnitToGram(new TableSpoon(),1.0));
+		aliNazikMap.put(items[7], unitManager.convertUnitToGram(new Gram(),16.0));
+		aliNazikMap.put(items[8], unitManager.convertUnitToGram(new TeaSpoon(),1.0));
+		aliNazikMap.put(items[4], unitManager.convertUnitToGram(new TeaSpoon(),1.0));
+		aliNazikMap.put(items[9], unitManager.convertUnitToGram(new TeaSpoon(),1.0));
+		aliNazikMap.put(items[13], unitManager.convertUnitToGram(new Ml(),50.0));
+		
+		
+		
+		Foods karniyarik = new Foods(karniyarikMap);
+		karniyarik.setName("Karnýyarýk");
+		Foods patlicanKebabi = new Foods(patlicanKebabiMap);
+		patlicanKebabi.setName("Patlýcan Kebabý");
+		Foods aliNazik = new Foods(aliNazikMap);
+		aliNazik.setName("Ali Nazik");
+	
+	
+		foodManager.foodDetail(new KarniyarikRecipe());
+		System.out.println();
+		
+		foodManager.foodDetail(new AliNazikRecipe());
+		System.out.println();
+		foodManager.foodDetail(new PatlicanKebabiRecipe());
+		
+		System.out.println("Calorie Information\n**************");
+		foodManager.totalCalorie(karniyarik);
+		System.out.println("**************");
+		foodManager.totalCalorie(patlicanKebabi);
+		System.out.println("**************");
+		foodManager.totalCalorie(aliNazik);
